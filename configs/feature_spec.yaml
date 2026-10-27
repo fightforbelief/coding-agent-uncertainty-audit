@@ -1,0 +1,69 @@
+# Gate 0.5 candidate feature dictionary.
+# Status: PROVISIONAL. Not a frozen primary feature set.
+# Do not combine these fields into execution_failure before a later,
+# separately approved amendment states the combination rule.
+
+research_question: >-
+  How well do published trajectory-reliability signals transfer to
+  repository-level coding-agent traces, and do observable execution-feedback
+  features add incremental predictive value beyond simple structural baselines
+  under repository-held-out evaluation?
+
+outcome:
+  unit: trajectory
+  failure_positive: "resolved == 0"
+  failure_negative: "resolved == 1"
+  excluded_from_supervised_analysis: "resolved == -1"
+  label_collapse: forbidden
+
+candidate_endpoint: >-
+  Delta_AUPRC = AUPRC(structural + execution-feedback) - AUPRC(structural-only)
+  on repository-held-out trajectories. No estimate exists yet.
+
+execution_fields:
+  tool_exit_nonzero:
+    source: OpenHands scaffold wrapper only
+    primary_candidate: false
+    openhands_only_secondary_analysis: pending student review
+    notes: >
+      Gate 0.75 records tool_exit_nonzero as OPENHANDS_ONLY_MEASURABLE.
+      Missing SWE-agent exit codes are not zeros and are not successes.
+      The field is not in a pooled cross-scaffold primary set.
+      Exit 124 and 130 are interrupt_or_timeout, not this field.
+  explicit_exception:
+    source: Python traceback or a non-listing Exception/Error line
+    primary_candidate: pending manual validation
+    notes: The word error alone does not qualify.
+  explicit_test_failure:
+    source: pytest FAILED, pytest failed summary, Go FAIL, cargo test failure
+    primary_candidate: pending manual validation
+  explicit_test_pass:
+    source: narrow pytest, cargo, and Go ok patterns
+    primary_candidate: false
+    notes: Gate 0 recall was 0.14 on 100 excerpts. Exploratory only.
+  interrupt_or_timeout:
+    source: scaffold exit 124 or 130, or an explicit interrupt/timeout phrase
+    primary_candidate: pending manual validation
+    notes: Not a test assertion failure.
+  execution_status_unknown:
+    source: conflicting scaffold codes, a generic Exit code line without a wrapper, or an exploratory test format
+    primary_candidate: false
+    notes: Absence of a signal is not unknown. Unknown means the text was ambiguous.
+  exploratory_test_format:
+    source: Jest, Vitest, Rust test ok lines, JUnit Tests run, and three prose pass phrases
+    primary_candidate: false
+    notes: Review-queue flag. Not a model feature.
+
+forbidden_combination:
+  - execution_failure
+
+prohibited_predictors:
+  - resolved
+  - metadata.reference_patch
+  - metadata.model_patch
+  - reasoning_content
+  - repo
+  - instance_id
+  - trajectory_id
+  - messages after the checkpoint
+  - final trajectory length

@@ -1,0 +1,24 @@
+dataset_id: nvidia/Open-SWE-Traces
+revision: c144d9d160dcd9f5ebcd9520d2d54111dda8b681
+commit_time_utc: "2026-07-15T06:29:42Z"
+data_version_on_card: "1.0"
+license: cc-by-4.0
+do_not_use_main: true
+configs:
+  openhands:
+    splits: [minimax_m25, qwen35_122b]
+  sweagent:
+    splits: [minimax_m25, qwen35_122b]
+primary_checkpoint_rule:
+  prefer_cycles: 5
+  minimum_known_label_coverage: 0.70
+  fallback_cycles: 3
+feasibility_thresholds:
+  min_known_label_trajectories: 5000
+  min_unique_repos: 50
+  min_unique_issues_per_known_class: 500
+  min_test_issues_per_class: 100
+  min_parseable_prefix_rate: 0.80
+  min_marker_precision: 0.90
+amendment: docs/PROTOCOL_AMENDMENT_2026-10-26.md
+marker_precision_rule: one-sided 95% Clopper-Pearson lower bound after student review; not yet met
