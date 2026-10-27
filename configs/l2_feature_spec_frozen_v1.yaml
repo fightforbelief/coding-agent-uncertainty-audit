@@ -1,0 +1,75 @@
+# Frozen L2 feature specification v1.
+# Written after the adjudication archive hash was verified.
+# This file does not replace configs/feature_spec.yaml or configs/feature_spec_v2.yaml.
+
+specification_version: l2_feature_spec_frozen_v1
+parser_version: v2
+feature_dictionary_version: v2
+research_question: >-
+  How well do published trajectory-reliability signals transfer to
+  repository-level coding-agent traces, and do observable execution-feedback
+  features add incremental predictive value beyond simple structural baselines
+  under repository-held-out evaluation?
+primary_endpoint: >-
+  Delta_AUPRC = AUPRC(structural + strict explicit_test_failure)
+  - AUPRC(structural-only)
+auprc_implementation: sklearn.metrics.average_precision_score
+positive_class: "resolved == 0"
+checkpoint_rule:
+  prefer_cycles: 5
+  minimum_known_label_coverage: 0.70
+  fallback_cycles: 3
+structural_features:
+  - prefix_completed_rounds
+  - prefix_checkpoint_reached
+  - prefix_assistant_message_count
+  - prefix_tool_call_count
+  - prefix_tool_observation_count
+  - prefix_distinct_tool_count
+  - prefix_tool_family_execute
+  - prefix_tool_family_edit
+  - prefix_tool_family_read
+  - prefix_tool_family_search
+  - prefix_tool_family_think
+  - prefix_tool_family_submit
+  - prefix_tool_family_other
+  - prefix_tool_family_unknown
+  - prefix_user_content_chars
+  - prefix_assistant_content_chars
+  - prefix_tool_observation_chars
+  - prefix_tool_observation_lines
+primary_added_feature: prefix_explicit_test_failure_any
+secondary_openhands_added_feature: prefix_tool_exit_nonzero_any
+excluded_from_primary:
+  - explicit_exception
+  - explicit_test_pass
+  - build_or_compile_failure
+  - test_setup_or_collection_failure
+  - package_level_failure_unresolved
+  - interrupt_or_timeout
+  - execution_status_unknown
+  - discordant_exit_status_and_test_result
+  - tool_exit_nonzero
+forbidden_combination:
+  - execution_failure
+tool_family_rule: >-
+  Fixed name mapping in prefix_features.tool_family. It is not refit after
+  seeing test average precision.
+audit_only_not_predictors:
+  - n_complete_cycles
+  - parse_status
+  - repo
+  - instance_id
+  - trajectory_id
+model:
+  family: sklearn.linear_model.LogisticRegression
+  penalty: l2
+  class_weight: null
+  C_grid: [0.01, 0.1, 1.0, 10.0]
+  tie_break: smaller C
+  max_iter: 5000
+  selection_metric: validation average precision
+  refit: train plus validation
+split_seed: 20261024
+bootstrap_seed: 20261092
+bootstrap_replicates: 1000

@@ -1,0 +1,65 @@
+# Parser v2 feature dictionary.
+# Version: v2. Status: CANDIDATE. Not a frozen primary feature set.
+# The Gate 0.5 file configs/feature_spec.yaml is unchanged.
+
+parser_version: v2
+dictionary_version: v2
+research_question: >-
+  How well do published trajectory-reliability signals transfer to
+  repository-level coding-agent traces, and do observable execution-feedback
+  features add incremental predictive value beyond simple structural baselines
+  under repository-held-out evaluation?
+
+candidate_endpoint: >-
+  Delta_AUPRC = AUPRC(structural + execution-feedback) - AUPRC(structural-only).
+  No estimate exists. This dictionary does not authorize a model.
+
+fields:
+  explicit_exception:
+    status: primary_candidate_pending_fresh_validation
+    rule: >-
+      A traceback, an exception-in-thread event, an uncaught exception, or a
+      line-start Capitalized Error/Exception with a message. Property names,
+      source snippets, configuration keys, prose, and class names without an
+      event do not qualify.
+  explicit_test_failure:
+    status: primary_candidate_pending_fresh_validation
+    rule: >-
+      An explicitly observed test-case or test-summary failure. A package-level
+      FAIL, a build failure, or a collection/setup failure does not qualify.
+  tool_exit_nonzero:
+    status: openhands_only_secondary_candidate
+    rule: >-
+      Exactly one OpenHands scaffold wrapper whose code is not 0, 124, or 130.
+      Missing SWE-agent codes are not zero and are not success.
+  explicit_test_pass:
+    status: exploratory
+    rule: >-
+      An explicit runner success signal and no contradictory failure signal
+      in the same observation. Exit code 0, a missing failure marker, or zero
+      tests do not qualify.
+  build_or_compile_failure:
+    status: exploratory
+  test_setup_or_collection_failure:
+    status: exploratory
+  package_level_failure_unresolved:
+    status: not_a_confirmed_test_failure
+  interrupt_or_timeout:
+    status: excluded_from_primary_until_a_clear_event_passes_validation
+    rule: >-
+      Scaffold exit 124 or 130, or an interrupt/timeout event phrase.
+      SIGINT, setTimeout, timeout configuration, signal handlers, and
+      DEADLINE_EXCEEDED mentions do not qualify.
+  execution_status_unknown:
+    status: excluded_from_primary
+    rule: >-
+      Conflicting scaffold codes, or a generic Exit code line with no scaffold
+      wrapper. Absence of a marker is not unknown.
+  discordant_exit_status_and_test_result:
+    status: diagnostic
+    rule: >-
+      Wrapper exit 0 together with an explicit test failure, or one ordinary
+      nonzero wrapper together with an explicit test pass.
+
+forbidden_combination: execution_failure
+frozen: false
