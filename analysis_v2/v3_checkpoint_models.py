@@ -137,6 +137,11 @@ def run(features_path,bindings_path,exclusions_path,output):
         if sha(ROOT/path)!=digest:raise ValueError('Frozen dependency changed: '+path)
     frame=pd.read_parquet(features_path)
     if len(frame)!=207489 or frame.trajectory_id.duplicated().any():raise ValueError('Wrong feature table')
+    historical_fields=[f'k5_{name}' for name in STRUCTURAL_FIELDS]
+    old=pd.read_parquet(ROOT/'artifacts/l2_run_20261027_01/prefix_features.parquet',columns=['trajectory_id']+historical_fields).set_index('trajectory_id')
+    aligned=frame.set_index('trajectory_id').loc[old.index,historical_fields]
+    if not np.array_equal(aligned.to_numpy(dtype=float),old.to_numpy(dtype=float),equal_nan=True):
+        raise ValueError('New K5 structure differs from frozen historical features; stop before scoring')
     ids=set(Path(exclusions_path).read_text(encoding='utf8').splitlines())
     work=frame[frame.resolved.isin([0,1])&~frame.trajectory_id.isin(ids)].copy();work['y']=work.resolved.eq(0).astype(int)
     repos={split:set(part.repo) for split,part in work.groupby('split')}
@@ -145,7 +150,8 @@ def run(features_path,bindings_path,exclusions_path,output):
     for split,part in work.groupby('split'):
         for k in KS:coverage.append(dict(split=split,k=k,n_total=len(part),n_reached=int(part[f'k{k}_reached'].sum()),coverage=float(part[f'k{k}_reached'].mean())))
     output=Path(output);output.mkdir(parents=True,exist_ok=True)
-    context=dict(code_sha256=sha(Path(__file__)),features_sha256=sha(features_path),bindings_sha256=sha(bindings_path),exclusion_ids_sha256=sha(exclusions_path))
+    context=dict(code_sha256=sha(Path(__file__)),features_sha256=sha(features_path),bindings_sha256=sha(bindings_path),exclusion_ids_sha256=sha(exclusions_path),
+                 all_207489_historical_k5_structural_rows_exactly_matched=True)
     start=output/'MODEL_RUN_CONTEXT.json'
     if start.exists():
         if json.loads(start.read_text(encoding='utf8'))!=context:raise ValueError('Run provenance changed; do not re-score saved cells')

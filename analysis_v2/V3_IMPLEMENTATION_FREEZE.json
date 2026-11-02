@@ -3,7 +3,7 @@
   "primary_k": 15,
   "first_new_test_score_not_yet_run": true,
   "implementation_sources": {
-    "v3_checkpoint_models.py": "70dd4b8cadea5bdb2f6ce0d70064732e9315371ad676f968b88f684df6716c7d",
+    "v3_checkpoint_models.py": "73aefbae5f1ed50d18431fdb42cc31361cd2b69cdf6888e19e0fca0eeb552b81",
     "v3_within_issue.py": "21e05795f4c1b4208580d6798890ffea0c8ed57fc08939a771c959ce85c5964f",
     "v3_finish_workflow.py": "502a9fd8a2cb8275e6fd7b216654f452ada8ff76dd8b186a014be324acc01ae0"
   },
@@ -16,5 +16,6 @@
     "statsmodels": "0.14.6",
     "patsy": "1.0.2",
     "matplotlib": "3.11.2"
-  }
+  },
+  "additional_pre_scoring_check": "Require all 207489 K5 structural rows to exactly match the frozen historical feature table before the first new score"
 }
