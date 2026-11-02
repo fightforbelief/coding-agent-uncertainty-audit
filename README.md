@@ -2,7 +2,11 @@
 
 Independent validation of trajectory-level reliability signals on the pinned historical Open-SWE-Traces v1.0 snapshot.
 
-The study is closed. The paper is [`paper.pdf`](paper.pdf). Decision recorded on 2026-10-27: `RESEARCH CLOSED — SMALL POSITIVE INCREMENTAL AP; PRACTICAL VALUE NOT ESTABLISHED`.
+The completed manuscript is [`paper.pdf`](paper.pdf): **Yunjie Guo and Hanqing Yang**, *Early Test-Command Signals in Coding-Agent Traces: Measurement, Predictive Value, and Within-Issue Associations* (3 November 2026, 13 pages). The accompanying 14-page PDF, LaTeX source, tables, and figures are in [`output/final_paper_20261103/`](output/final_paper_20261103/README.md). The 27 October 2026 frozen-protocol paper is [`paper_20261027.pdf`](paper_20261027.pdf).
+
+Completed exploratory extension (2026-11-03): owner-attested individual review of the two AI-assisted returns and owner-authorized AI adjudication are complete. The full pinned 207,489-trajectory feature census, 12 prediction cells and 14 within-issue analyses have completed, with all 1,196 audit trajectories excluded from every model partition. The preselected K=15 primary exploratory delta AP is 0.000906580475, with paired repository-cluster bootstrap interval [-0.00214988951, 0.00428431441]; incremental AP is not established. All new findings remain exploratory. AI sources, deviations and failed bootstrap fits are disclosed; no third independent human adjudication or independently verified gold standard is claimed.
+
+The October 27 decision remains: `RESEARCH CLOSED — SMALL POSITIVE INCREMENTAL AP; PRACTICAL VALUE NOT ESTABLISHED`.
 
 Pinned dataset revision: `c144d9d160dcd9f5ebcd9520d2d54111dda8b681` (commit time 2026-07-15T06:29:42Z).
 

@@ -1,0 +1,4 @@
+Partition,Trajectories,Repositories,Issues,Failure share
+Train,"113,350","1,650","12,177",0.588258
+Validation,"26,504",352,"2,771",0.625113
+Test,"20,013",347,"2,138",0.586519

@@ -1,0 +1,21 @@
+{
+  "pdf_sha256": "d69be6254e1027f704c1fe96e7108b36cfaab863348d35bc0e59e747c8dc6171",
+  "pages": 14,
+  "all_pages_visually_inspected": true,
+  "tables": 11,
+  "figures": 2,
+  "references": 8,
+  "authors": [
+    "Yunjie Guo",
+    "Hanqing Yang"
+  ],
+  "critical_narrative_values_checked_against_saved_results": true,
+  "model_refits_performed": false,
+  "new_test_predictions_generated": false,
+  "source_manifest_hashes_verified": true,
+  "latex_static_checks_pass": true,
+  "latex_compiled_locally": false,
+  "small_odds_ratios_use_scientific_notation": true,
+  "clipped_text_detected": false,
+  "table_split_across_pages": false
+}

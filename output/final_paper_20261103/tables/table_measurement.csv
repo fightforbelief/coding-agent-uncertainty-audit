@@ -1,0 +1,7 @@
+Audit frame,Sample n,Positive / all,Uncertain / all,Positive / determinate
+R5 positive (A),124,98.26%,1.74%,100.00%
+R15 positive (A+B),324,97.22%,2.20%,99.40%
+R15 known negative (C),200,0.40%,24.42%,0.53%
+R15 missing command (D),495,0.00%,83.43%,0.00%
+R5 ambiguous (AMB5),78,1.58%,7.30%,1.70%
+R15 ambiguous (AMB15),100,4.92%,16.75%,5.91%

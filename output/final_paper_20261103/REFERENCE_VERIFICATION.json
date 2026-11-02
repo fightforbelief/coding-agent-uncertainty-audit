@@ -1,0 +1,46 @@
+{
+  "accessed": "2026-11-03",
+  "method": "Primary publication pages, pinned provider card and official software documentation checked through web tool",
+  "references": [
+    {
+      "id": 1,
+      "title": "NVIDIA",
+      "url": "https://huggingface.co/datasets/nvidia/Open-SWE-Traces/blob/c144d9d160dcd9f5ebcd9520d2d54111dda8b681/README.md"
+    },
+    {
+      "id": 2,
+      "title": "SWE-bench",
+      "url": "https://arxiv.org/abs/2310.06770"
+    },
+    {
+      "id": 3,
+      "title": "SWE-agent",
+      "url": "https://arxiv.org/abs/2405.15793"
+    },
+    {
+      "id": 4,
+      "title": "OpenHands",
+      "url": "https://arxiv.org/abs/2407.16741"
+    },
+    {
+      "id": 5,
+      "title": "Measurement and Fairness",
+      "url": "https://doi.org/10.1145/3442188.3445901"
+    },
+    {
+      "id": 6,
+      "title": "Cluster-Robust Inference",
+      "url": "https://doi.org/10.3368/jhr.50.2.317"
+    },
+    {
+      "id": 7,
+      "title": "average_precision_score",
+      "url": "https://sklearn.org/stable/modules/generated/sklearn.metrics.average_precision_score.html"
+    },
+    {
+      "id": 8,
+      "title": "ConditionalLogit",
+      "url": "https://www.statsmodels.org/v0.14.6/generated/statsmodels.discrete.conditional_models.ConditionalLogit.html"
+    }
+  ]
+}
