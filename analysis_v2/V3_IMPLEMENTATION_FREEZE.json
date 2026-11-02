@@ -4,7 +4,7 @@
   "first_new_test_score_not_yet_run": true,
   "implementation_sources": {
     "v3_checkpoint_models.py": "73aefbae5f1ed50d18431fdb42cc31361cd2b69cdf6888e19e0fca0eeb552b81",
-    "v3_within_issue.py": "21e05795f4c1b4208580d6798890ffea0c8ed57fc08939a771c959ce85c5964f",
+    "v3_within_issue.py": "fc3daac6b51cbfbd5954dc6033f1540fa933a0898338e0ecfc2a05c142449a5a",
     "v3_finish_workflow.py": "502a9fd8a2cb8275e6fd7b216654f452ada8ff76dd8b186a014be324acc01ae0"
   },
   "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
@@ -17,5 +17,6 @@
     "patsy": "1.0.2",
     "matplotlib": "3.11.2"
   },
-  "additional_pre_scoring_check": "Require all 207489 K5 structural rows to exactly match the frozen historical feature table before the first new score"
+  "additional_pre_scoring_check": "Require all 207489 K5 structural rows to exactly match the frozen historical feature table before the first new score",
+  "conditional_fit_support_check": "Rank-deficient or zero-information repository bootstrap fits are counted as failed, not retained with arbitrary coefficients"
 }

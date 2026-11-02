@@ -23,7 +23,7 @@ from statsmodels.discrete.conditional_models import ConditionalLogit
 
 class ExactConditional:
     def __init__(self,x,y,groups,repos):
-        self.blocks=[];self.n_groups=0
+        self.blocks=[];self.support=[];self.n_groups=0
         positions={}
         for i,g in enumerate(groups):positions.setdefault(g,[]).append(i)
         packed={}
@@ -37,7 +37,10 @@ class ExactConditional:
             packed.setdefault((n,m),[]).append((xi,yi@xi,int(repos[indices[0]])))
             self.n_groups+=1
         for (n,m),items in packed.items():
-            self.blocks.append((np.stack([z[0] for z in items]),np.stack([z[1] for z in items]),np.array([z[2] for z in items]),n,m))
+            xblock=np.stack([z[0] for z in items]);repo=np.array([z[2] for z in items])
+            self.blocks.append((xblock,np.stack([z[1] for z in items]),repo,n,m))
+            centered=xblock-xblock.mean(axis=1,keepdims=True)
+            self.support.append((repo,np.einsum('gnp,gnq->gpq',centered,centered)))
 
     def value_gradient(self,beta,multiplicities=None):
         ll=0.;gradient=np.zeros(len(beta));mass=0.
@@ -67,11 +70,16 @@ def optimize(x,y,repo,conditional=None,multiplicities=None,start=None):
     if conditional is None:
         weights=np.ones(len(y)) if multiplicities is None else multiplicities[repo]
         mass=weights.sum()
-        if mass<=0:return None
+        if mass<=0 or np.linalg.matrix_rank(x.T@(weights[:,None]*x))<x.shape[1]:return None
         def fun(beta):
             eta=x@beta
             return float(weights@(np.logaddexp(0,eta)-y*eta)/mass),x.T@(weights*(expit(eta)-y))/mass
     else:
+        support=np.zeros((x.shape[1],x.shape[1]))
+        for group_repo,scatter in conditional.support:
+            weights=np.ones(len(group_repo)) if multiplicities is None else multiplicities[group_repo]
+            support+=np.einsum('g,gpq->pq',weights,scatter)
+        if np.linalg.matrix_rank(support)<x.shape[1]:return None
         def fun(beta):
             ll,g,mass=conditional.value_gradient(beta,multiplicities)
             return -ll/max(mass,1),-g/max(mass,1)
