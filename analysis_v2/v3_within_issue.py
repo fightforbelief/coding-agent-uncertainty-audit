@@ -135,7 +135,10 @@ def fit_analysis(frame,k,model_name,group_column,bootstrap=500):
     if conditional is not None:
         reference=ConditionalLogit(y,x,groups=groups)
         ll,g,_=conditional.value_gradient(beta)
-        verification=dict(loglike_abs_difference=float(abs(reference.loglike(beta)-ll)),score_max_abs_difference=float(np.max(np.abs(reference.score(beta)-g))))
+        ref_ll=reference.loglike(beta);ref_score=reference.score(beta)
+        if not np.isfinite(ref_ll) or not np.isfinite(ref_score).all() or not np.isfinite(ll) or not np.isfinite(g).all():
+            return dict(status='POINT_REFERENCE_NUMERIC_FAILURE',k=k,model=model_name,n_rows=len(y),dropped=dropped)
+        verification=dict(loglike_abs_difference=float(abs(ref_ll-ll)),score_max_abs_difference=float(np.max(np.abs(ref_score-g))))
         if verification['loglike_abs_difference']>1e-6 or verification['score_max_abs_difference']>1e-5:raise ValueError('Exact likelihood differs from statsmodels')
     rng=np.random.default_rng(20261092);draws=[];failures=[]
     for i in range(bootstrap):

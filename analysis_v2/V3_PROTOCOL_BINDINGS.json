@@ -15,7 +15,10 @@
     "src/p8audit/trajectory_parser.py": "af9f34a06fd0fe938506f65cec636001c55bef51030521258186facd999d9718",
     "src/p8audit/prefix_features.py": "981cbd8c74a2e34c87f9f1071d7f4abb4df88f542f50a2f8e353de67e479da09",
     "src/p8audit/l2_models.py": "c1b44edca44862e05d22f8a675dbae0508792006cf579848fb3b45dc1a05254e",
-    "src/p8audit/dependence.py": "4f56651805b9b6331657b7cdac54406ab2a310c37b0893678072b19cdc8ea838"
+    "src/p8audit/dependence.py": "4f56651805b9b6331657b7cdac54406ab2a310c37b0893678072b19cdc8ea838",
+    "analysis_v2/v3_4_lib.py": "edcda89042d97efe32719eea53b81ed1c8562869f98b70c72baeddf05401833a",
+    "analysis_v2/v3_3_pilot.py": "3a6d1557651d725736444758f421f930fe6a8c033481ab938e480dee9fcb31d6",
+    "analysis_v2/census_metrics.py": "bd37bc585604d3f23174f0935040f92fb9b1ca4f6a5e39035278951fee7f2e7e"
   },
   "exclusion_set_sha256": "069d6421a4f57b63df47c7de4f68810f53d230725b43b1037ca6cf836c09e7ff",
   "protocol_sha256": "5bd2568a3dc6184cf859cac5b9989fe4c197e972f39173472be7af7fad95681d",
