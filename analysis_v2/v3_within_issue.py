@@ -10,8 +10,11 @@ import hashlib
 import json
 import os
 import sys
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 os.environ.setdefault('OMP_NUM_THREADS','1')
+os.environ.setdefault('OPENBLAS_NUM_THREADS','1')
+os.environ.setdefault('MKL_NUM_THREADS','1')
 ROOT=Path(__file__).resolve().parents[1]
 sys.path[:0]=[str(ROOT/'src'),str(ROOT/'analysis_v2')]
 import numpy as np
@@ -159,6 +162,12 @@ def fit_analysis(frame,k,model_name,group_column,bootstrap=500):
                 dropped_no_within_group_variation=dropped,statsmodels_likelihood_verification=verification,coefficients=coefficients)
 
 
+def fit_variant(part,k,name,group):
+    result=fit_analysis(part,k,'B' if name.startswith('B_') else name,group)
+    result['analysis_name']=name
+    return result
+
+
 def run(features,exclusions,output):
     output=Path(output);output.mkdir(parents=True,exist_ok=True)
     data=pd.read_parquet(features);ids=set(Path(exclusions).read_text(encoding='utf8').splitlines())
@@ -171,6 +180,7 @@ def run(features,exclusions,output):
         if json.loads(context_file.read_text(encoding='utf8'))!=context:raise ValueError('Run provenance changed')
     else:context_file.write_text(json.dumps(context,indent=2),encoding='utf8')
     runs=[]
+    pending=[]
     support=[]
     for k in (10,15):
         current=data.copy()
@@ -183,12 +193,20 @@ def run(features,exclusions,output):
             path=output/f'{name}_k{k}.json'
             if path.exists():result=json.loads(path.read_text(encoding='utf8'))
             else:
-                # Within a configuration there are no configuration dummies.
-                result=fit_analysis(part,k,'B' if name.startswith('B_') else name,group)
-                result['analysis_name']=name
-                path.write_text(json.dumps(result,indent=2,allow_nan=False),encoding='utf8')
+                pending.append((path,part,k,name,group))
+                continue
             runs.append(result)
             print(json.dumps(dict(stage='within_issue_fit_complete',analysis=name,k=k,status=result['status'])),flush=True)
+    # Each analysis has its own fixed RNG seed, so scheduling cannot change draws.
+    # Workers never share estimators or output files; only the parent saves results.
+    with ProcessPoolExecutor(max_workers=4) as executor:
+        futures={executor.submit(fit_variant,part,k,name,group):path for path,part,k,name,group in pending}
+        for future in as_completed(futures):
+            result=future.result();path=futures[future]
+            path.write_text(json.dumps(result,indent=2,allow_nan=False),encoding='utf8')
+            runs.append(result)
+            print(json.dumps(dict(stage='within_issue_fit_complete',analysis=result['analysis_name'],k=result['k'],status=result['status'])),flush=True)
+    runs.sort(key=lambda r:(r['k'],r['analysis_name']))
     pd.DataFrame(support).to_csv(output/'within_issue_support.csv',index=False)
     rows=[]
     for result in runs:

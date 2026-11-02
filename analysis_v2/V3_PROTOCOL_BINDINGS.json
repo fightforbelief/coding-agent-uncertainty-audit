@@ -22,6 +22,6 @@
   },
   "exclusion_set_sha256": "069d6421a4f57b63df47c7de4f68810f53d230725b43b1037ca6cf836c09e7ff",
   "protocol_sha256": "5bd2568a3dc6184cf859cac5b9989fe4c197e972f39173472be7af7fad95681d",
-  "deviations_sha256": "0870bcacd074248d35739255610fcac2c335641eff31fa12df65aa1fef83b430",
+  "deviations_sha256": "76fae39de943653aa9c9a38a9a6209e0a0f924b9c190d368bd05d99c16ba2770",
   "new_v3_test_set_scored": false
 }

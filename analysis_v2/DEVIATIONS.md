@@ -11,3 +11,5 @@
 9. 全库特征提取使用相同冻结 worker 的正向/反向缓存并行与逐字节缓存核对。它只改变计算顺序；84 个原始分片仍各自核验哈希。源 detector、parser、结构特征和检查点定义不改变。
 
 后续实现错误、数据不一致或收敛问题必须在发生时追加，不能根据测试分数选择性删除。
+
+10. Before any new scoring, independent within-issue analysis cells were scheduled across four local worker processes. Each cell retains its fixed seed and all 500 repository-bootstrap refits; no likelihood, estimator, covariate or interval rule changed. Numerical libraries use one thread per worker. This changes computation scheduling only.

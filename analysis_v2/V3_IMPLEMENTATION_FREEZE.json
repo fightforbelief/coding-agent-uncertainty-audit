@@ -4,7 +4,7 @@
   "first_new_test_score_not_yet_run": true,
   "implementation_sources": {
     "v3_checkpoint_models.py": "73aefbae5f1ed50d18431fdb42cc31361cd2b69cdf6888e19e0fca0eeb552b81",
-    "v3_within_issue.py": "58d6f367baeda0690db8283434a6d32334db96868a031f12618b75bfd1e89e73",
+    "v3_within_issue.py": "ce739fbfb6436ae7f9f979f810671bb86a25e941dd890793dcb2879ee4feae07",
     "v3_finish_workflow.py": "502a9fd8a2cb8275e6fd7b216654f452ada8ff76dd8b186a014be324acc01ae0"
   },
   "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
@@ -19,5 +19,6 @@
   },
   "additional_pre_scoring_check": "Require all 207489 K5 structural rows to exactly match the frozen historical feature table before the first new score",
   "conditional_fit_support_check": "Rank-deficient or zero-information repository bootstrap fits are counted as failed, not retained with arbitrary coefficients",
-  "conditional_reference_nonfinite_check": "Nonfinite reference likelihood/score is explicitly reported as a numeric failure, never accepted as an equality match"
+  "conditional_reference_nonfinite_check": "Nonfinite reference likelihood/score is explicitly reported as a numeric failure, never accepted as an equality match",
+  "parallel_execution": "Four independent within-issue analysis cells; one numerical thread per process; fixed per-cell seeds unchanged; before all new scoring"
 }
