@@ -1,0 +1,19 @@
+{
+  "status": "EXCLUSION SET PREPARED BEFORE ANY NEW V3 TEST-SET SCORING",
+  "audit_trajectories": 1196,
+  "excluded_from_all_splits": true,
+  "counts_by_split": {
+    "test": 135,
+    "train": 929,
+    "validation": 132
+  },
+  "known_label_exclusion_counts_by_split": {
+    "test": 105,
+    "train": 643,
+    "validation": 116
+  },
+  "source_sampling_key_sha256": "189603410a5916810205c1fcd3e93a5d088661f0bec8c8ea5cf36f816a6e30dd",
+  "exclusion_ids_sha256": "069d6421a4f57b63df47c7de4f68810f53d230725b43b1037ca6cf836c09e7ff",
+  "new_v3_test_set_scored": false,
+  "note": "Uses the frozen 1196-trajectory V3.5 audit, not the superseded 200-trajectory design; do not mix exclusion sets."
+}

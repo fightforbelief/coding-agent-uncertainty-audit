@@ -1,0 +1,22 @@
+{
+  "status": "PRE-SCORING PROTOCOL BINDINGS",
+  "primary_k": 15,
+  "train_validation_known_non_audit_rows": 139854,
+  "train_validation_checkpoint_coverage": {
+    "15": 0.9996925365023525,
+    "10": 0.9999785490583036,
+    "5": 1.0
+  },
+  "test_set_used_to_select_k": false,
+  "code_hashes": {
+    "analysis_v2\\p8v3\\testcmd.py": "872256f5880438e19696666de39e274ec478a361ec3b94f0fe8369209f13423b",
+    "analysis_v2\\traj_adapter.py": "f30817e1e0dd883136e8d0ba4143e43cdde28c99a9f4b49b86c4e024f7878574",
+    "analysis_v2\\v3_checkpoint_features.py": "f129f9bdeb75748c9637f590820e92915fd6f6374dc2b0d33e091e7139f93995",
+    "src\\p8audit\\trajectory_parser.py": "af9f34a06fd0fe938506f65cec636001c55bef51030521258186facd999d9718",
+    "src\\p8audit\\prefix_features.py": "981cbd8c74a2e34c87f9f1071d7f4abb4df88f542f50a2f8e353de67e479da09"
+  },
+  "exclusion_set_sha256": "069d6421a4f57b63df47c7de4f68810f53d230725b43b1037ca6cf836c09e7ff",
+  "protocol_sha256": "5bd2568a3dc6184cf859cac5b9989fe4c197e972f39173472be7af7fad95681d",
+  "deviations_sha256": "470053d97271336744a9c104195d1218b83cca9f0de78f677aa5af98bc5a7a3a",
+  "new_v3_test_set_scored": false
+}
