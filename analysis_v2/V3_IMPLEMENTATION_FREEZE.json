@@ -1,0 +1,20 @@
+{
+  "protocol_freeze_commit": "e104202",
+  "primary_k": 15,
+  "first_new_test_score_not_yet_run": true,
+  "implementation_sources": {
+    "v3_checkpoint_models.py": "70dd4b8cadea5bdb2f6ce0d70064732e9315371ad676f968b88f684df6716c7d",
+    "v3_within_issue.py": "21e05795f4c1b4208580d6798890ffea0c8ed57fc08939a771c959ce85c5964f",
+    "v3_finish_workflow.py": "502a9fd8a2cb8275e6fd7b216654f452ada8ff76dd8b186a014be324acc01ae0"
+  },
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "statsmodels": "0.14.6",
+    "patsy": "1.0.2",
+    "matplotlib": "3.11.2"
+  }
+}
