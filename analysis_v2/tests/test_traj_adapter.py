@@ -265,7 +265,10 @@ def test_prefix_membership_covers_incomplete_cycles() -> None:
 
 
 def test_real_shards_when_data_is_mounted() -> None:
-    root = Path(os.environ.get("P8_DATA_ROOT", ""))
+    data_root = os.environ.get("P8_DATA_ROOT")
+    if not data_root:
+        pytest.skip("P8_DATA_ROOT is not configured for the real-shard check")
+    root = Path(data_root)
     matched = [
         path
         for path in (root.rglob("*.parquet") if root.is_dir() else [])

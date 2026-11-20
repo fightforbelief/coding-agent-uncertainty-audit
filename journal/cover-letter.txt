@@ -1,0 +1,12 @@
+Dear Editors of Empirical Software Engineering,
+
+Please consider “What Early Test Commands Reveal About Coding-Agent Runs” for publication as an empirical research article.
+
+A software agent can invoke a test runner, encounter an environment error, and leave a trace that looks like verification. We examined this measurement problem in 207,489 trajectories across four model and agent configurations. In a stratified audit, 97.22% of the weighted 15-round detector-positive frame showed a definite command, while 74.05% showed confirmed execution under our AI-assisted review and reconciliation procedure. The gap also appeared in each reviewer’s first round. For readers using test activity to predict issue resolution, the preselected logistic comparison found a small and uncertain increment in average precision. We report the positive secondary nonlinear result alongside the primary result.
+
+The manuscript discloses the prior use of this snapshot, the provenance of the audit labels, and the instability of some within-issue estimates. The companion repository includes the frozen protocol, editable figures and tables, and aggregate data and code for checking the reported measurement shares and prediction contrasts. An earlier manuscript in the repository concerned a single failure marker at five rounds. Appendix A explains the overlap and the changes in population, features, and analysis.
+
+Yunjie Guo and Hanqing Yang
+Independent Researcher, Suzhou, China
+Corresponding author: Hanqing Yang
+hanqing.yang189@gmail.com

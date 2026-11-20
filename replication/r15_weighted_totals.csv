@@ -1,0 +1,5 @@
+version,sample_memberships,weight_total,weight_definite_command,weight_confirmed_execution
+agreement_only,324,44480,41685.60,29246.18
+reconciled,324,44480,43242.74,32935.42
+reviewer_a,324,44480,41685.60,31285.06
+reviewer_b,324,44480,43242.74,33690.94

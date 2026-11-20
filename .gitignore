@@ -56,3 +56,7 @@ decisions/
 *.jpg
 *.jpeg
 experiments/preflight/
+
+# Reviewer-facing files distributed with the journal manuscript
+!/replication/README.md
+!/journal/submission-source.zip

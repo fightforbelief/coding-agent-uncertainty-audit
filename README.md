@@ -1,36 +1,32 @@
-# p8-coding-agent-uncertainty-audit
+# What Early Test Commands Reveal About Coding-Agent Runs
 
-Independent validation of trajectory-level reliability signals on the pinned historical Open-SWE-Traces v1.0 snapshot.
+Yunjie Guo and Hanqing Yang · Independent Researcher, Suzhou, China
 
-The completed manuscript is [`paper.pdf`](paper.pdf): **Yunjie Guo and Hanqing Yang**, *Early Test-Command Signals in Coding-Agent Traces: Measurement, Predictive Value, and Within-Issue Associations* (3 November 2026, 13 pages). The accompanying 14-page PDF, LaTeX source, tables, and figures are in [`output/final_paper_20261103/`](output/final_paper_20261103/README.md). The 27 October 2026 frozen-protocol paper is [`paper_20261027.pdf`](paper_20261027.pdf).
+[Read the journal manuscript](paper.pdf) · [Download editable submission sources](journal/submission-source.zip) · [Inspect the aggregate checks](replication/README.md)
 
-Completed exploratory extension (2026-11-03): owner-attested individual review of the two AI-assisted returns and owner-authorized AI adjudication are complete. The full pinned 207,489-trajectory feature census, 12 prediction cells and 14 within-issue analyses have completed, with all 1,196 audit trajectories excluded from every model partition. The preselected K=15 primary exploratory delta AP is 0.000906580475, with paired repository-cluster bootstrap interval [-0.00214988951, 0.00428431441]; incremental AP is not established. All new findings remain exploratory. AI sources, deviations and failed bootstrap fits are disclosed; no third independent human adjudication or independently verified gold standard is claimed.
+We audited test activity in a frozen Open-SWE-Traces snapshot of 207,489 trajectories. In the prespecified detector-positive audit frame at 15 rounds, the weighted shares labeled as definite commands and confirmed executions were 97.22% and 74.05%. Requiring agreement by both first-round reviewers yielded 93.72% and 65.75%. The labels began as AI-assisted drafts, underwent separate author review according to the project record, and used AI adjudication for disagreements.
 
-The October 27 decision remains: `RESEARCH CLOSED — SMALL POSITIVE INCREMENTAL AP; PRACTICAL VALUE NOT ESTABLISHED`.
+The primary exploratory logistic comparison used 20,012 test trajectories from 347 held-out repositories. Adding four test-related features changed average precision by 0.000907 (paired 95% repository-bootstrap interval −0.002150 to 0.004284). A secondary gradient-boosting model gained 0.003888 (0.000539 to 0.007222). All main within-issue command-presence intervals crossed one. The paper reports all 12 prediction cells and accounts for 860 failed refits among 7,000 requested within-issue bootstrap fits.
 
-Pinned dataset revision: `c144d9d160dcd9f5ebcd9520d2d54111dda8b681` (commit time 2026-07-15T06:29:42Z).
+## Manuscript and evidence
 
-The frozen primary endpoint is repository-held-out Delta AP: average precision of L2-regularized logistic regression on structural features plus a strict explicit test-failure indicator, minus average precision of the structural model alone. On the scored test set the structural AP is 0.6409601282425617 and the augmented AP is 0.6410260199693942. Delta AP is 0.00006589172683257871. The paired repository-cluster bootstrap 95% interval is [0.00000560783009556365, 0.00013282286584345433]. The interval excludes zero, and the absolute increment is very small. The primary feature is sparse, so this result does not establish practical usefulness, novelty, or an exact reproduction of a published method. L3 was not run.
+- [Journal source](journal/paper.tex) and [flat source archive](journal/submission-source.zip). Compile the three files together with Tectonic or PDFLaTeX. The November 20 revision and the [cover letter](journal/cover-letter.txt) are prepared for *Empirical Software Engineering*.
+- [Review data and verification](replication/README.md). Check the reported audit shares against weighted totals, the primary change in average precision against the archived metrics, and the number of failed refits against the complete stability table.
+- [Machine-readable results](output/final_paper_20261103/tables/) for all prediction cells and within-issue analyses.
+- [Exploratory protocol](analysis_v2/PROTOCOL_v3.md), [protocol deviations](analysis_v2/DEVIATIONS.md) and [audit exclusion manifest](analysis_v2/audit/EXCLUSION_SET_MANIFEST.json).
+- [NVIDIA Open-SWE-Traces, revision c144d9d](https://huggingface.co/datasets/nvidia/Open-SWE-Traces/tree/c144d9d160dcd9f5ebcd9520d2d54111dda8b681). The audit uses the four historical model/scaffold groups from this revision.
 
-## Run on hanqing-win
+## Verification on the research host
 
-From the project root, with the project virtual environment:
+From the P8 project root on hanqing-win in PowerShell, use the project's existing environment. The real-shard tests use the raw source mount. The archived research workspace also contains local-only historical fixtures, review returns, model fits and intermediate files.
 
-```text
-set PYTHONPATH=src
-.venv\Scripts\python.exe -m pytest -q
-.venv\Scripts\python.exe scripts\00_remote_environment_audit.py
-.venv\Scripts\python.exe scripts\02_dataset_schema_audit.py --mode census
-.venv\Scripts\python.exe scripts\02_dataset_schema_audit.py --mode parse-sample
-.venv\Scripts\python.exe scripts\03_parser_validation.py --mode draw
-.venv\Scripts\python.exe scripts\gate05_marker_review_queue.py
-.venv\Scripts\python.exe scripts\gate05_l1_anchor_audit.py
-.venv\Scripts\python.exe scripts\gate05_literature_overlap.py
-.venv\Scripts\python.exe scripts\gate075_issue_distribution.py
-.venv\Scripts\python.exe scripts\gate075_marker_queue_v2.py
-.venv\Scripts\python.exe scripts\gate08_prepare_review_package.py
-.venv\Scripts\python.exe scripts\gate09_fresh_validation.py
-.venv\Scripts\python.exe scripts\l2_fit_confirmatory.py
+```powershell
+$env:PYTHONPATH = 'src'
+$env:P8_DATA_ROOT = (Resolve-Path '..\_p8-v3_4-census-staging\data\data').Path
+.\.venv\Scripts\python.exe -m pytest -q
+.\.venv\Scripts\python.exe replication\verify_summary.py
 ```
 
-Raw trajectories, fitted pipelines, and run artifacts are not in this repository.
+## Earlier versions
+
+The [October 27 historical study](paper_20261027.pdf) examined a single strict test-failure marker at five rounds. Its ΔAP was 0.0000659. The journal article uses a later exploratory extension of the same snapshot. [November 3 manuscript and tables](output/final_paper_20261103/) and [subsequent 13-page version](https://github.com/fightforbelief/coding-agent-uncertainty-audit/blob/118d72b107a8c1a044d0e563fa8ee89cc4df3ae3/paper.pdf).
