@@ -1,0 +1,13 @@
+runner,version,condition,command,exit_code,body_entries,old_parser,cache_marker,verbose_go_case_pass
+pytest,pytest 9.1.1,pass,python -m pytest test_sample.py,0,1,pass,0,0
+pytest,pytest 9.1.1,skip,python -m pytest test_sample.py,0,0,unknown,0,0
+pytest,pytest 9.1.1,failure,python -m pytest test_sample.py,1,1,fail,0,0
+pytest,pytest 9.1.1,setup_error,python -m pytest test_sample.py,1,0,fail,0,0
+unittest,3.12.10,pass,python -m unittest test_sample.py,0,1,pass,0,0
+unittest,3.12.10,skip,python -m unittest test_sample.py,0,0,pass,0,0
+unittest,3.12.10,failure,python -m unittest test_sample.py,1,1,fail,0,0
+unittest,3.12.10,setup_error,python -m unittest test_sample.py,1,0,error_only,0,0
+go,go version go1.25.4 windows/amd64,cold,go test -v ./...,0,1,pass,0,1
+go,go version go1.25.4 windows/amd64,warm,go test -v ./...,0,0,pass,1,1
+go,go version go1.25.4 windows/amd64,forced,go test -v -count=1 ./...,0,1,pass,0,1
+go,go version go1.25.4 windows/amd64,no_match,go test -v -run ^TestMissing$ ./...,0,0,pass,0,0

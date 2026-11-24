@@ -1,0 +1,593 @@
+{
+  "revision": "c144d9d160dcd9f5ebcd9520d2d54111dda8b681",
+  "files": [
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00000-of-00020.parquet",
+      "bytes": 208847192,
+      "sha256": "3c86c3ddc0c4f5481c3a44645dec0f185a1299b49dd66678b5223011bb947304",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00001-of-00020.parquet",
+      "bytes": 204174552,
+      "sha256": "dce7b0e13b477f036fe3d6b1bf2bea3cef11f447feb1c57cc115b2016e674ac4",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00002-of-00020.parquet",
+      "bytes": 224802172,
+      "sha256": "3cc4539180cf5a573b00eb9d1a53b3863d0a759f96b6e48a34f9d48c93a6635c",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00003-of-00020.parquet",
+      "bytes": 211071262,
+      "sha256": "0c65ca98e3857998e3a747804327579a7db6fe120cc9ac89b40bdf6d209ee638",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00004-of-00020.parquet",
+      "bytes": 214251905,
+      "sha256": "533e3d45c0726a65cc0697ceaadec97a4721a13eae3a6c0ece46d249da5276eb",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00005-of-00020.parquet",
+      "bytes": 215933356,
+      "sha256": "bf11880d2737a16e933b5dc350ae7350addb130f81c75587f40fd3f0e2b8dc59",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00006-of-00020.parquet",
+      "bytes": 202840922,
+      "sha256": "c7f0db650cd9169b611a7543bb2c3171b3c7225f76456667ebbd9d94b53d86fe",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00007-of-00020.parquet",
+      "bytes": 212418352,
+      "sha256": "9487a68ca82ba0205417674612d9c753fffe89c78dc186af066c293f25bdca57",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00008-of-00020.parquet",
+      "bytes": 212971953,
+      "sha256": "2168519d74370a0d8812298fd4672b8a828b0df551168e69cb42dc5407ea8b80",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00009-of-00020.parquet",
+      "bytes": 246529959,
+      "sha256": "020f22ea349665bad0e6990655f97deb3554b42553fb1a4c304984c479c6d274",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00010-of-00020.parquet",
+      "bytes": 211574153,
+      "sha256": "d2b4af184592a566bf2e684e732593512b4390be75e5323b868756f526dae765",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00011-of-00020.parquet",
+      "bytes": 202909037,
+      "sha256": "38a826ed5b06ab45296d993c529fe0767df2d86af8645300a88b6dbf2e98a150",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00012-of-00020.parquet",
+      "bytes": 208195277,
+      "sha256": "5309a88ddd42c25e12111b7d1694a224506b6f734ee28139e21569cc734e0674",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00013-of-00020.parquet",
+      "bytes": 214672060,
+      "sha256": "965d38fb5ef0c224fcb04972fcb0ed2f44282cce17c87fa1e6d213be1cf7cf3a",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00014-of-00020.parquet",
+      "bytes": 204210859,
+      "sha256": "280fb1323576788abb7eb9b3aea0a4e4595901437adab8ff7ef9c3434fd563c0",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00015-of-00020.parquet",
+      "bytes": 213697248,
+      "sha256": "e918afda4a8a787889dbe07eb81f890e21f7ce29258e2de49c1de93c41972342",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00016-of-00020.parquet",
+      "bytes": 215414051,
+      "sha256": "bd53fd8e2d1dfb0564b97e9688973b12c9d54503356a47009b40f883701ad50f",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00017-of-00020.parquet",
+      "bytes": 222735333,
+      "sha256": "374364d9ee528e20b743c0e9f35c204e40deea8e3faf7e7d24e6fa710eb435de",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00018-of-00020.parquet",
+      "bytes": 236501623,
+      "sha256": "7e1bd301868d862f5a71b41990cb6b996d7d00f917268dd33253aed9a4e8b49b",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_openhands_trajectories/train-00019-of-00020.parquet",
+      "bytes": 240767319,
+      "sha256": "5969cd573bad51d76c0a2a0e1bf8a2ad5dc547a7b1a1d5feb092a6f3564a0113",
+      "config": "openhands",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00000-of-00023.parquet",
+      "bytes": 212662000,
+      "sha256": "157cc67dcba6f4c8429d66a36c87a1d6bd0576f74f7a4f088a7fb7bbc9db0049",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00001-of-00023.parquet",
+      "bytes": 200725031,
+      "sha256": "9fe73bac3f1ba3db1dc10c70595bbe54b57b927ddfa7e757fe0ebae424fc591a",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00002-of-00023.parquet",
+      "bytes": 197531273,
+      "sha256": "b9b6b8789c6ee5bc0bd8e5115b2c35a168f9b07199b39ab6b494203ea98ef405",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00003-of-00023.parquet",
+      "bytes": 192660711,
+      "sha256": "5db793cc0c62f204c3a7f87b6ff6373197b51779263d9b0899b9c2d0a07a880d",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00004-of-00023.parquet",
+      "bytes": 188492999,
+      "sha256": "1f3875a12ffc9b7f3e8d51ef69538ab781231d4c6d8781b13f3fa4d2f952e040",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00005-of-00023.parquet",
+      "bytes": 187659145,
+      "sha256": "385a551684681acd02e930e5ba7f8b363121492b80bcea4de3ce26ab64306c43",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00006-of-00023.parquet",
+      "bytes": 185250563,
+      "sha256": "2810f96bcfaf364ebb0ee756819b5c85a7f15f6fc8d01bf2fb9e2851b71ec244",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00007-of-00023.parquet",
+      "bytes": 198324884,
+      "sha256": "1520b2f7bb30c511eb4d1eafd5b81d3d061d276dfcdad50e06eea3874918ec07",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00008-of-00023.parquet",
+      "bytes": 184845205,
+      "sha256": "be63f96808fe058a9b835f1d7cf698816af86813e24f4164d10865dc5ded7020",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00009-of-00023.parquet",
+      "bytes": 187376018,
+      "sha256": "b1de35a02a4ec6e1f2d1c858e20a4f3fca0ead2957e6dc739b2f761e44fb8f4a",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00010-of-00023.parquet",
+      "bytes": 191020768,
+      "sha256": "2ab7e920f52a1c25ac0127889ef665535b1bb05dc8c3b4c041bd604dfd2de54a",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00011-of-00023.parquet",
+      "bytes": 185657639,
+      "sha256": "7777f5e7cdc1d897c58cda13a7894c7d949120f23b36bf76232b6248329a6496",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00012-of-00023.parquet",
+      "bytes": 182306529,
+      "sha256": "6b413259c504166ef98cc85e1e19a5b0a8411e99d95aabe85131052dda80a39d",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00013-of-00023.parquet",
+      "bytes": 185883283,
+      "sha256": "7a94283ee493581b9a1a63650d25364c14c179ec22e6dafb296249b625ba311b",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00014-of-00023.parquet",
+      "bytes": 179774492,
+      "sha256": "04ecbe89efabae315c302a3da6f71a5bf49babf6f7a55e550a4d40aae7ac7616",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00015-of-00023.parquet",
+      "bytes": 177286797,
+      "sha256": "7b53e197885e0522004679382858e6e64e5af121f657f87972ab38164dcc6589",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00016-of-00023.parquet",
+      "bytes": 179605322,
+      "sha256": "1ef45397591888ef1c97cbf06625e2446ee6ff45807c44741fa673a2ac910ccb",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00017-of-00023.parquet",
+      "bytes": 178477039,
+      "sha256": "1afa8b1a164807002c2ce31cf46ce31304a3a9f47e9d333c4cd1779e15319894",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00018-of-00023.parquet",
+      "bytes": 199102689,
+      "sha256": "9d094c894fd85c19587a9f981603cc67f670383cce01de30469e16b198bb212f",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00019-of-00023.parquet",
+      "bytes": 202638593,
+      "sha256": "b6ae541599faa6dc4d8d733603d8ae56fca6c6e627df861ad466a95a502af6d0",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00020-of-00023.parquet",
+      "bytes": 216096782,
+      "sha256": "53843db6fad30156ee3e176feba19851f6e3606e362c48ce317f027786600c6e",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00021-of-00023.parquet",
+      "bytes": 231781841,
+      "sha256": "d1d5ee1b26a3d3b58e6c92d0ca1be5aa8fd4f573dc8a67e573438adff617a0b5",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/minimax_m25_sweagent_trajectories/train-00022-of-00023.parquet",
+      "bytes": 230224294,
+      "sha256": "710d81cbf89f12b6dcf3649328358672897c34c55b5e2abd4c9c61492905a975",
+      "config": "sweagent",
+      "split": "minimax_m25"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00000-of-00023.parquet",
+      "bytes": 237468305,
+      "sha256": "b97dfd827743ae194dbec160327a0a731757fa6932950c6ab48ec45df627fdf7",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00001-of-00023.parquet",
+      "bytes": 225622285,
+      "sha256": "b36c939b9d21c0d352732f2fc29e5a204c1926e398dd5357e4f8dc7a2059c592",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00002-of-00023.parquet",
+      "bytes": 238212724,
+      "sha256": "8a0dbf6f808df2a68c12664baf528eee0396e7f46572408cb32a4a8fa785df3a",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00003-of-00023.parquet",
+      "bytes": 226112949,
+      "sha256": "42d68571926a59e3a5d8c7a9a288ed3372007dcf9761ceb55c2ee4d353790166",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00004-of-00023.parquet",
+      "bytes": 229052630,
+      "sha256": "d2bd037aa2c6bcb98a4620244c9195e8f3fd0932fb2f5360352d621ce8f69ae2",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00005-of-00023.parquet",
+      "bytes": 249554289,
+      "sha256": "9bdfea52c806bf8969dbca128b9b577e31405a123ee1ad7e95b979054d78f57b",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00006-of-00023.parquet",
+      "bytes": 242389883,
+      "sha256": "8cff93cb04371a8f9f5ed1ce4dc5ac5a5f3f23280d567273e45f6a4e3c9a6100",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00007-of-00023.parquet",
+      "bytes": 232690603,
+      "sha256": "83f84e364999746a98f646909dc4c09f517f941caa71edfe8ab825315e7871b3",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00008-of-00023.parquet",
+      "bytes": 240343716,
+      "sha256": "2d8f89012a21a8602f7a5e4e91c6d378290c89fcae5a5d954f5ac30830665495",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00009-of-00023.parquet",
+      "bytes": 228823858,
+      "sha256": "1449ef99830b30d5cb6c53bfca46a67c0160c4289e2214ffd59d164213bc7355",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00010-of-00023.parquet",
+      "bytes": 231552321,
+      "sha256": "e8635086bc567b9780dd914734423dd011c8955c5a0a4ec72e83a9344c515a43",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00011-of-00023.parquet",
+      "bytes": 226559439,
+      "sha256": "807ad7bd061be957797aa8a0c93759ce06f685e14310f215e0cf4207ead194ac",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00012-of-00023.parquet",
+      "bytes": 240271489,
+      "sha256": "1aa64d3ac45e589252af0156b169af32b87aa6a59a78132ba20614488c0c3a4e",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00013-of-00023.parquet",
+      "bytes": 227974716,
+      "sha256": "a15098be036c816124587790c63d6c5f1196b71d14da55d6e2828cb9b187bf2c",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00014-of-00023.parquet",
+      "bytes": 234639720,
+      "sha256": "04e137ae7a127625fd6940e22c8d2def8c012819b32a6c5ae3931bdede067d25",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00015-of-00023.parquet",
+      "bytes": 231279799,
+      "sha256": "b8b273633480d670699f8e14fb04b754b6e7c80f272414de4ac65c1591f7cf01",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00016-of-00023.parquet",
+      "bytes": 225417412,
+      "sha256": "5b272e3c5f2fe045f7eea3c7d3eef004721dce81362a0b6f1727446496471ff5",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00017-of-00023.parquet",
+      "bytes": 224218313,
+      "sha256": "dbb1c249ed9a14231da338c974d20602f176b0731894259aef0582087fa6d11f",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00018-of-00023.parquet",
+      "bytes": 245060801,
+      "sha256": "d46dd0b69c0f27a8c04d7d07e36fa744ea2d73ee960fb7a7093cfac6cf247e8d",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00019-of-00023.parquet",
+      "bytes": 239155254,
+      "sha256": "6547b0570a66687270f4abe3ca084faa34019d3cde2da18abc4eb3ce58250f3b",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00020-of-00023.parquet",
+      "bytes": 242209471,
+      "sha256": "9d9f5ba4e2c833375509a2c774967b197c39d97c0fb6cc2ae73bd03b8d625cdf",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00021-of-00023.parquet",
+      "bytes": 242610948,
+      "sha256": "3abbe5f6b0855e009baea95db7720369c236d7500d6378237a15d505f0214bbc",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_openhands_trajectories/train-00022-of-00023.parquet",
+      "bytes": 45178574,
+      "sha256": "68e340080679b9f3e0f5cac7b737e7b316c432a9a2b32e20c5ff272eda702110",
+      "config": "openhands",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00000-of-00018.parquet",
+      "bytes": 241951555,
+      "sha256": "7c3afc2a36a82f8fbd7df243a9cbf7855fa948683f50afda79b1361f8820060f",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00001-of-00018.parquet",
+      "bytes": 239258114,
+      "sha256": "9c7cec3d34e2f6db7824229328de79443c5e6074d962b16c57decdc123718643",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00002-of-00018.parquet",
+      "bytes": 240246622,
+      "sha256": "47af263a7d58a3c80c531ae7d3dc327e973c19399c4cc6a1fe9ab159ed9a1a2a",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00003-of-00018.parquet",
+      "bytes": 238936396,
+      "sha256": "83d1c1d42a015a17214150acfa79d941e86fb6e9d0078525e0854682ba1519bd",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00004-of-00018.parquet",
+      "bytes": 241419994,
+      "sha256": "146386d539ffb72a9aefb9dc956f83ad132d48ea1606857ede5da82d15ae6f52",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00005-of-00018.parquet",
+      "bytes": 242069621,
+      "sha256": "9e93427f31531c5b515abba687caaba8e22db0a38ab5b6d193252d4fab6504cc",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00006-of-00018.parquet",
+      "bytes": 241982918,
+      "sha256": "3898e37929c730857e84fbf35819d1af950301238033988b2645e6ffb4bc5d78",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00007-of-00018.parquet",
+      "bytes": 246645710,
+      "sha256": "8d2b5e5a853c21a349697d28dfa62cb5a54f1b1278805cacd3df6993453994a1",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00008-of-00018.parquet",
+      "bytes": 239097457,
+      "sha256": "f87ac13089cd29c0c026d12d3d96e265af4554b8a0815479a30f36d4396d145e",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00009-of-00018.parquet",
+      "bytes": 247462009,
+      "sha256": "acd160a402f91d94a3c3d54b90f41295ae916a3a3b84968c61170599e87d650f",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00010-of-00018.parquet",
+      "bytes": 232416637,
+      "sha256": "661e1e1a5d108fb072819c23d8baa76bddaf4022e42fac74c5d547ba8be46f3c",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00011-of-00018.parquet",
+      "bytes": 233967060,
+      "sha256": "6fe6361fa7c387bbf64b0b4ae8c0bdfaa0e7883250665fd3cd221394730e9ebe",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00012-of-00018.parquet",
+      "bytes": 243970802,
+      "sha256": "654209c2170c1a81cb8c6424bc886eb2167b2c7fc90067dcf4d8568db1da0fd4",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00013-of-00018.parquet",
+      "bytes": 244866485,
+      "sha256": "467c70cd10bce15aface92d526d3c31bc0fb27644746343c61a81ead41280f7c",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00014-of-00018.parquet",
+      "bytes": 243824610,
+      "sha256": "7041d447788817974b340760b5ef66684af83b385d5092cd490edd8615eab6cf",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00015-of-00018.parquet",
+      "bytes": 243419456,
+      "sha256": "2170d4c3d7abe00b1c39816ead9f0c6ffc9bc82e222e3cbdf2b841ecd351fac8",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00016-of-00018.parquet",
+      "bytes": 244962688,
+      "sha256": "6969b610013f3b812666b23c5378ed7e111de2ca1a8bd9e7107d297c3df69c9d",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    },
+    {
+      "path": "data/qwen35_sweagent_trajectories/train-00017-of-00018.parquet",
+      "bytes": 225589953,
+      "sha256": "27232272717e4b02ece862f4211ace3ac1cf0eca81cdeed4b19d092fa6dd2dd6",
+      "config": "sweagent",
+      "split": "qwen35_122b"
+    }
+  ]
+}

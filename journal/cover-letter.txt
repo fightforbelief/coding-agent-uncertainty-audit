@@ -1,10 +1,12 @@
 Dear Editors of Empirical Software Engineering,
 
-Please consider “What Early Test Commands Reveal About Coding-Agent Runs” for publication as an empirical research article.
+Please consider “Did the Tests Run? Measuring Fresh Test Execution in Coding-Agent Traces” as an empirical research article.
 
-A software agent can invoke a test runner, encounter an environment error, and leave a trace that looks like verification. We examined this measurement problem in 207,489 trajectories across four model and agent configurations. In a stratified audit, 97.22% of the weighted 15-round detector-positive frame showed a definite command, while 74.05% showed confirmed execution under our AI-assisted review and reconciliation procedure. The gap also appeared in each reviewer’s first round. For readers using test activity to predict issue resolution, the preselected logistic comparison found a small and uncertain increment in average precision. We report the positive secondary nonlinear result alongside the primary result.
+Researchers often use test commands and named passing cases in agent logs as evidence that the agent exercised a patch. We measured when that inference is possible. In the first 15 rounds of 46,834 Go-labeled trajectories, 295 of 5,925 recognized package successes explicitly replayed cached results and another 1,569 reported no matching tests. Across eight packages in Go's standard library, an independent test-body counter distinguished fresh execution from verbose replay even though both printed the named case as passing.
 
-The manuscript discloses the prior use of this snapshot, the provenance of the audit labels, and the instability of some within-issue estimates. The companion repository includes the frozen protocol, editable figures and tables, and aggregate data and code for checking the reported measurement shares and prediction contrasts. An earlier manuscript in the repository concerned a single failure marker at five rounds. Appendix A explains the overlap and the changes in population, features, and analysis.
+The paper also quantifies sensitivity to the interpretation of the logs. The weighted command–execution evidence gap in the detector-positive audit frame remained at least 15.61 percentage points over all itemwise choices between the two first-round judgments. We disclose the AI-assisted origin of the reviews and the automated adjudication. The primary held-out prediction contrast was small and its interval crossed zero.
+
+The public companion repository supplies the extraction and instrumentation code, source checksums, and sufficient aggregate data for checking the main results. Appendix A explains the overlap with a prior repository manuscript on a single failure marker.
 
 Yunjie Guo and Hanqing Yang
 Independent Researcher, Suzhou, China
