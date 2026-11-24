@@ -41,8 +41,10 @@ def package_counts(command, output):
         if match:
             kind = "cached" if match["time"] == "(cached)" else "no_match" if match["note"] else "timed"
             counts[kind] += 1
-            if match["sep"].startswith("\t"):
+            if "\t" in match["sep"]:
                 counts["tab_" + kind] += 1
+    if counts["cached"] and not counts["timed"] and not counts["no_match"]:
+        counts["cache_only_with_case_pass"] += int(bool(re.search(r"^--- PASS: Test[^\s]* \(", output, re.M)))
     return counts
 
 
@@ -70,7 +72,7 @@ def worker(task):
         raise ValueError("Unexpected source hash: " + item["path"])
     group = group_for_shard(item["path"])
     cells = {k: Counter() for k in (15, 30)}
-    repos = {k: set() for k in cells}
+    repos = {k: defaultdict(Counter) for k in cells}
     n = 0
     for batch in pq.ParquetFile(path).iter_batches(batch_size=12, columns=["language", "repo", "trajectory"]):
         n += batch.num_rows
@@ -94,31 +96,45 @@ def worker(task):
                         cell["mixed_observations"] += counts["cached"] > 0 and counts["timed"] + counts["no_match"] > 0
                 cell.update(seen)
                 if seen:
-                    repos[k].add(batch.column("repo")[i].as_py())
+                    repo = batch.column("repo")[i].as_py()
+                    if not isinstance(repo, str) or not repo.strip():
+                        raise ValueError("Missing repository for an observed summary")
+                    repos[k][repo].update({kind: seen[kind] for kind in ("cached", "timed", "no_match")})
                 cell["success_trajectories"] += bool(seen)
                 cell["cached_trajectories"] += seen["cached"] > 0
     return group, cells, repos, n
+
+
+def repository_stats(by_repo):
+    counts = [(r["cached"], sum(r.values())) for r in by_repo.values()]
+    total_cached = sum(c for c, n in counts)
+    total_lines = sum(n for c, n in counts)
+    deletion = [(total_cached - c) / (total_lines - n) for c, n in counts if n < total_lines]
+    return dict(repositories=len(counts), repositories_with_cache=sum(c > 0 for c, n in counts),
+                equal_repository_cache_share=sum(c/n for c, n in counts)/len(counts) if counts else None,
+                delete_one_repo_min=min(deletion, default=None), delete_one_repo_max=max(deletion, default=None))
 
 
 def run(data, manifest_file, workers):
     manifest = json.loads(manifest_file.read_text(encoding="utf-8-sig"))
     assert manifest["revision"] == PINNED_REVISION and len(set(x["path"] for x in manifest["files"])) == 84
     totals = defaultdict(Counter)
-    repos = defaultdict(set)
+    repos = defaultdict(lambda: defaultdict(Counter))
     n = 0
     with ProcessPoolExecutor(max_workers=workers) as pool:
         for index, (group, cells, observed, rows) in enumerate(pool.map(worker, [(data,x) for x in manifest["files"]]), 1):
             for k, cell in cells.items():
                 for key in (("/".join(group), k), ("all", k)):
                     totals[key].update(cell)
-                    repos[key].update(observed[k])
+                    for repo, counts in observed[k].items():
+                        repos[key][repo].update(counts)
             n += rows
             print(f"{index}/84 shards; {n} trajectories", file=sys.stderr, flush=True)
     assert n == 207489
     assert totals["all",15]["go_trajectories"] == sum(totals[g,15]["go_trajectories"] for g,k in totals if g != "all" and k == 15)
     return {"revision": PINNED_REVISION, "manifest_sha256": digest(manifest_file),
             "source_sha256": digest(__file__), "trajectories_scanned": n, "shards_verified": 84,
-            "cells": [dict(group=g, checkpoint=k, repositories=len(repos[g,k]), **totals[g,k])
+            "cells": [dict(group=g, checkpoint=k, **repository_stats(repos[g,k]), **totals[g,k])
                       for g,k in sorted(totals)]}
 
 
